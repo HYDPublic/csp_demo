@@ -25,6 +25,8 @@ namespace DotNetCoreSqlDb
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
+            services.AddCsp(nonceByteAmount: 32);
             // Add framework services.
             services.AddMvc();
 
@@ -57,13 +59,18 @@ namespace DotNetCoreSqlDb
             }
 
             
+            
             app.UseCsp(csp =>
             {
                 csp.AllowScripts
-                    .FromSelf();
+                    .FromSelf()
+                    .From("ajax.aspnetcdn.com")
+                    .AddNonce();
                 
                 csp.AllowStyles
-                    .FromSelf();
+                    .FromSelf()
+                    .From("ajax.aspnetcdn.com")
+                    .AddNonce();
             });
             
             app.UseStaticFiles();
