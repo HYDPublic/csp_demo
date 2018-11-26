@@ -65,11 +65,13 @@ namespace DotNetCoreSqlDb
                 csp.AllowScripts
                     .FromSelf()
                     .From("ajax.aspnetcdn.com")
+                    .AllowUnsafeInline()
                     .AddNonce();
                 
                 csp.AllowStyles
                     .FromSelf()
                     .From("ajax.aspnetcdn.com")
+                    .AllowUnsafeInline()
                     .AddNonce();
             });
             
