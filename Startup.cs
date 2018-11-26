@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using DotNetCoreSqlDb.Models;
+using Joonasw.AspNetCore.SecurityHeaders;
 
 namespace DotNetCoreSqlDb
 {
@@ -35,8 +36,8 @@ namespace DotNetCoreSqlDb
                 services.AddDbContext<MyDatabaseContext>(options =>
                     options.UseSqlite("Data Source=MvcMovie.db"));
 
-// Automatically perform database migration
-services.BuildServiceProvider().GetService<MyDatabaseContext>().Database.Migrate();
+            // Automatically perform database migration
+            services.BuildServiceProvider().GetService<MyDatabaseContext>().Database.Migrate();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,6 +64,17 @@ services.BuildServiceProvider().GetService<MyDatabaseContext>().Database.Migrate
                     name: "default",
                     template: "{controller=Todos}/{action=Index}/{id?}");
             });
+
+            app.UseCsp(csp =>
+            {
+                csp.AllowScripts
+                    .FromSelf();
+                
+                csp.AllowStyles
+                    .FromSelf();
+            });
+
+            
         }
     }
 }
