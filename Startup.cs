@@ -56,15 +56,7 @@ namespace DotNetCoreSqlDb
                 app.UseExceptionHandler("/Home/Error");
             }
 
-            app.UseStaticFiles();
-
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Todos}/{action=Index}/{id?}");
-            });
-
+            
             app.UseCsp(csp =>
             {
                 csp.AllowScripts
@@ -73,8 +65,15 @@ namespace DotNetCoreSqlDb
                 csp.AllowStyles
                     .FromSelf();
             });
-
             
+            app.UseStaticFiles();
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Todos}/{action=Index}/{id?}");
+            });
         }
     }
 }
