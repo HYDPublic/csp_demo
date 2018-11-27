@@ -64,13 +64,13 @@ namespace DotNetCoreSqlDb
             {
                 csp.AllowScripts
                     .FromSelf()
-                    .From("ajax.aspnetcdn.com")
-                    .AllowUnsafeInline();
+                    .From("ajax.aspnetcdn.com");
+                    //.AllowUnsafeInline();
                 
                 csp.AllowStyles
                     .FromSelf()
-                    .From("ajax.aspnetcdn.com")
-                    .AllowUnsafeInline();
+                    .From("ajax.aspnetcdn.com");
+                    //.AllowUnsafeInline();
             });
             
             app.UseStaticFiles();
