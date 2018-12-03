@@ -65,12 +65,12 @@ namespace DotNetCoreSqlDb
                 csp.AllowScripts
                     .FromSelf()
                     .From("ajax.aspnetcdn.com");
-                    //.AllowUnsafeInline();
-                
+                    
                 csp.AllowStyles
                     .FromSelf()
                     .From("ajax.aspnetcdn.com");
-                    //.AllowUnsafeInline();
+
+                csp.ReportViolationsTo("https://prod-02.australiasoutheast.logic.azure.com:443/workflows/903685ffe04142749e603448cd9f12cf/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=S7h0xrxAQwtWYhW0s1iJq2pLnvTuAxZJWODTZYOnnRY");
             });
             
             app.UseStaticFiles();
