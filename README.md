@@ -1,19 +1,16 @@
----
-services: app-service\web,app-service
-platforms: dotnet
-author: cephalin
----
+# Content Security Policy Demo
+This is a sample 'to-do' application built on .NET Core which has been configured with a 
+simple content security policy implementation for demonstration purposes.
 
-# .NET Core MVC sample for Azure App Service
+# Links
+[.NET Core MVC sample for Azure App Service]
+(https://github.com/Azure-Samples/dotnetcore-sqldb-tutorial)
 
-This is a sample application that you can use to follow along with the tutorial at 
-[Build a .NET Core and SQL Database web app in Azure Web Apps for Containers](https://docs.microsoft.com/azure/app-service/containers/tutorial-dotnetcore-sqldb-app). 
+[Content Security Policy (CSP) in ASP.NET Core]
+(https://joonasw.net/view/csp-in-aspnet-core)
 
-## License
+[Joonasw.AspNetCore.SecurityHeaders]
+(https://www.nuget.org/packages/Joonasw.AspNetCore.SecurityHeaders)
 
-See [LICENSE](LICENSE.md).
-
-## Contributing
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-  
+#Live Demo
+(https://netcoretodo.azurewebsites.net/)
