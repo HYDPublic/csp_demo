@@ -57,8 +57,6 @@ namespace DotNetCoreSqlDb
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-
-            
             
             app.UseCsp(csp =>
             {
